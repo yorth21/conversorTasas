@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor</title>
+</head>
+<body>
+    <main class="main">
+        <section class="form__contanier">
+            <form class="form__content" id="frmTasas">
+                <h1 class="form__title">Conversor de tasas</h1>
+                <div class="form__group">
+                    <label for="tasa" class="form__label">Tasa(%):</label>
+                    <input type="text" class="form__input" id="tasa" name="tasa">
+                </div>
+                <div class="form__group">
+                    <label for="tipoTasa" class="form__label">Tipo de tasa:</label>
+                    <select class="form__select" id="tipoTasa" name="tipoTasa">
+                        <option value="nominal" class="form__option" selected>Nominal</option>
+                        <option value="efectiva" class="form__option">Efectiva (vencida)</option>
+                        <option value="anticipada" class="form__option">Efectiva anticipada</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="periodoTasa" class="form__label">Periodicidad de la tasa:</label>
+                    <select class="form__select" id="periodoTasa" name="periodo">
+                        <option value="anual" class="form__option" selected>Anual</option>
+                        <option value="semestral" class="form__option">Semestral</option>
+                        <option value="trimensual" class="form__option">Trimensual</option>
+                        <option value="bimendual" class="form__option">Bimensual</option>
+                        <option value="mensual" class="form__option">Mensual</option>
+                    </select>
+                </div>
+                <div class="form__group --hiden" id="containerCapitalizacion">
+                    <label for="capitalizacion" class="form__label">Capitalizacion:</label>
+                    <select class="form__select" id="capitalizacion" name="capitalizacion">
+                        <option value="anual" class="form__option">Anual</option>
+                        <option value="semestral" class="form__option">Semestral</option>
+                        <option value="trimensual" class="form__option">Trimensual</option>
+                        <option value="bimensual" class="form__option">Bimensual</option>
+                        <option value="mensual" class="form__option" selected>Mensual</option>
+                    </select>
+                </div>
+                <!-- <div class="form__group --hiden" id="containerFormaPago">
+                    <label for="formaPago" class="form__label">Forma de pago de los intereses:</label>
+                    <select class="form__select" id="formaPago" name="formaPago">
+                        <option value="vencida" class="form__option" selected>Vencida</option>
+                        <option value="anticipada" class="form__option">Anticipada</option>
+                    </select>
+                </div> -->
+                <div class="form__group">
+                    <label for="tasaSolicita" class="form__label">Tipo de tasa que solicita:</label>
+                    <select class="form__select" id="tasaSolicita" name="tasaSolicita">
+                        <option value="nominal" class="form__option" selected>Nominal</option>
+                        <option value="efectiva" class="form__option">Efectiva (vencida)</option>
+                        <option value="anticipada" class="form__option">Efectiva anticipada</option>
+                    </select>
+                </div>
+                <div class="form__group form__group--btn">
+                    <button class="form__btn" onclick="calcularTasa(event);">Calcular</button>
+                    <button class="form__btn" type="reset">Limpiar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="table__container">
+            <div class="table__content">
+                <h1 class="table__h1">Tasas convertidas</h1>
+                <div class="table__tipoTasa" id="resultTipoTasas"></div>
+                <table class="table__tasas" id="resultTasas"></table>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
