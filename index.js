@@ -276,6 +276,15 @@ function buscarConversion(obj, value1, value2) {
     return undefined;
 }
 
+/* Validaciones para el input */
+const input = document.getElementById("tasa");
+
+input.addEventListener("input", function() {
+  if (isNaN(this.value) || this.value < 0) {
+    this.value = "";
+  }
+});
+
 
 /* --------------------------
     Funcion principal
@@ -311,17 +320,27 @@ function calcularTasa(e) {
         const tasaRow = document.createElement("tr");
         tasaRow.classList.add("table__tr");
 
-        const tasaKey = document.createElement("td");
-        tasaKey.classList.add("table__td");
-        tasaKey.innerHTML = key + ':';
-        tasaRow.appendChild(tasaKey);
-
         const tasaValue = document.createElement("td");
         tasaValue.classList.add("table__td");
         tasaValue.innerHTML = tasa;
         tasaRow.appendChild(tasaValue);
 
+        const tasaKey = document.createElement("td");
+        tasaKey.classList.add("table__td");
+        tasaKey.innerHTML = key;
+        tasaRow.appendChild(tasaKey);
+
         resultTasas.appendChild(tasaRow);
-      }
+    }
 }
 
+// Limpiar la tabla donde va el resultado
+function limpiarTable(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('frmTasas');
+    form.reset();
+
+    const resultTasas = document.getElementById('resultTasas');
+    resultTasas.innerHTML = '';
+}

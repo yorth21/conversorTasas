@@ -9,13 +9,20 @@
     <title>Conversor</title>
 </head>
 <body>
+    <div class="nota">
+        <h1 class="nota__h1">Nota</h1>
+        <p class="nota__text">
+            Para calcular tasas de Efectiva a Efectiva y de Nominal a Nominal no se utiliza la variable capitalizacion.
+        </p>
+    </div>
+
     <main class="main">
         <section class="form__contanier">
             <form class="form__content" id="frmTasas">
                 <h1 class="form__title">Conversor de tasas</h1>
                 <div class="form__group">
                     <label for="tasa" class="form__label">Tasa(%):</label>
-                    <input type="text" class="form__input" id="tasa" name="tasa">
+                    <input type="text" class="form__input" id="tasa" name="tasa" placeholder="Digite su tasa">
                 </div>
                 <div class="form__group">
                     <label for="tipoTasa" class="form__label">Tipo de tasa:</label>
@@ -62,7 +69,7 @@
                 </div>
                 <div class="form__group form__group--btn">
                     <button class="form__btn" onclick="calcularTasa(event);">Calcular</button>
-                    <button class="form__btn" type="reset">Limpiar</button>
+                    <button class="form__btn" onclick="limpiarTable(event);" type="reset">Limpiar</button>
                 </div>
             </form>
         </section>
@@ -75,6 +82,13 @@
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__p">Copyright © 2023 Todos los derechos reservados - Yorth21</p>
+            <p class="footer__p">Desarrollado por <a href="https://github.com/yorth21" class="footer__link">Yorth21</a></p>
+        </div>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

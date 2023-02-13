@@ -1,7 +1,23 @@
+:root {
+    --black: #222831;
+    --gray: #393E46;
+    --blue: #00ADB5;
+    --white: #F0EEED;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .main {
-    background-color: lightgreen;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
 
     display: flex;
     flex-flow: row wrap;
@@ -10,61 +26,82 @@
     gap: 2rem;
 }
 .form__contanier {
-    background-color: aquamarine;
+    max-width: 23.75rem;
+    width: 100%;
 }
 .form__content {
-    background-color: lightpink;
+    background-color: var(--gray);
+    width: 100%;
     padding: 2rem;
+
+    border-radius: 1rem;
 
     display: flex;
     flex-flow: column nowrap;
     gap: .5rem;
 }
 .form__title {
-    background-color: lightcyan;
     margin: 0 0 .5rem 0;
 
     font-size: 2em;
     font-weight: bold;
 }
 .form__group {
-    background-color: lightyellow;
     display: flex;
     flex-flow: column nowrap;
 }
 .form__label {
-    background-color: lightgrey;
     margin: 0 0 .25rem;
+    font-weight: bold;
 }
 .form__input {
-    background-color: lightskyblue;
+    background-color: var(--blue);
     width: 100%;
     padding: .5rem;
+
+    color: var(--black);
+
+    border-radius: .5rem;
 }
 .form__input {
     outline: none;
 }
 .form__select {
-    background-color: lightcoral;
+    background-color: var(--blue);
     width: 100%;
     padding: .5rem;
+
+    color: var(--black);
+    border-radius: .5rem;
 
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right .5rem top 50%;
     background-size: 1.5rem 1.5rem;
 }
-.form__option {}
+.form__select {
+    outline: none;
+}
+.form__option {
+    background-color: var(--white);
+}
 .form__group--btn {
     flex-flow: row wrap;
     gap: .5rem;
 }
 .form__btn {
-    background-color: lightcoral;
+    background-color: var(--blue);
     min-width: 7.5rem;
+    margin: 1rem 0 0 0;
     padding: .5rem;
 
+    font-weight: 600;
+    color: var(--black);
+
+    border-radius: .5rem;
     flex: 1;
+
+    cursor: pointer;
 }
 
 /* clase para ocultar elementos HTML */
@@ -73,33 +110,94 @@
 }
 
 /* Estilos para mostrar los resultados de las tablas */
-.table__container {}
+.table__container {
+    max-width: 23.75rem;
+    width: 100%;
+}
 .table__content {
-    background-color: lightpink;
+    background-color: var(--gray);
+    width: 100%;
     padding: 2rem;
+
+    border-radius: 1rem;
 
     display: flex;
     flex-flow: column nowrap;
     gap: .5rem;
 }
 .table__h1 {
-    background-color: lightcyan;
     margin: 0 0 .5rem 0;
 
     font-size: 2em;
     font-weight: bold;
 }
-.table__tasas {
-    background-color: lightblue;
-    border: 1px solid black;
+.table__tipoTasa {
+    font-weight: bold;
 }
+.table__tasas {}
 .table__tr {
-    background-color: lightskyblue;
+
 }
 .table__td {
-    background-color: lightcyan;
     padding: .5rem;
     margin: .5rem;
 
-    border: 1px solid black;
+    text-align: start;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: var(--gray);
+    width: 100%;
+    margin: 2rem 0 0 0;
+    padding: 1rem;
+
+    position: sticky;
+    top: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__content {
+    max-width: 75rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.footer__link {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+/* Estilos para la nota */
+.nota {
+    background-color: var(--gray);
+    padding: 2rem;
+    margin: 2rem 0;
+
+    border-radius: 1rem;
+}
+.nota__h1 {
+    margin: 0 0 .25rem 0;
+
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.nota__text {
+    line-height: 1.4em;
+}
+
+@media (max-width: 480px) {
+    .form__contanier {
+        margin: 0 1rem;
+    }
+    .table__container {
+        margin: 0 1rem;
+    }
+    .nota {
+        margin: 2rem 1rem 2rem 1rem;
+    }
 }
