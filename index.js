@@ -84,52 +84,6 @@ function tasaDecimal( data ) {
 }
 
 /* ----------------------------------------------------
-    Funcion para mostrar la forma de pago de intereses
-   ----------------------------------------------------  */
-/*
-document.addEventListener("DOMContentLoaded", function() {
-    // quitar el select de la forma de pago en caso de que sea tasa nominal
-    const tipoTasaSelect = document.getElementById("tipoTasa");
-    const containerFormaPago = document.getElementById("containerFormaPago");
-    let tipoTasa = tipoTasaSelect.value;
-    // quitar la capitalizacion si no se la usa
-    const tasaSolicitaSelect = document.getElementById("tasaSolicita");
-    const containerCapitalizacion = document.getElementById("containerCapitalizacion");
-    let tasaSolicita = tasaSolicitaSelect.value;
-
-    // Funciones para modificar los selects
-    tipoTasaSelect.addEventListener("change", function() {
-        if (tasaSolicita == 'nominal' && tipoTasaSelect.value == 'nominal') {
-            containerFormaPago.classList.add("hiden");
-            containerCapitalizacion.classList.add("hiden");
-            tipoTasa = tipoTasaSelect.value;
-        } else if (tasaSolicita == 'efectiva' && tipoTasaSelect.value == 'efectiva') {
-            containerFormaPago.classList.remove("hiden");
-            containerCapitalizacion.classList.add("hiden");
-            tipoTasa = tipoTasaSelect.value;
-        } else if (tipoTasaSelect.value == 'nominal') {
-            containerFormaPago.classList.add("hiden");
-            containerCapitalizacion.classList.remove("hiden");
-            tipoTasa = tipoTasaSelect.value;
-        } else {
-            containerFormaPago.classList.remove("hiden");
-            containerCapitalizacion.classList.remove("hiden");
-            tipoTasa = tipoTasaSelect.value;
-        }
-    });
-    tasaSolicitaSelect.addEventListener("change", function() {
-        if ((tasaSolicitaSelect.value == 'nominal' && tipoTasa == 'nominal') || (tasaSolicitaSelect.value == 'efectiva' && tipoTasa == 'efectiva')) {
-            containerCapitalizacion.classList.add("hiden");
-            tasaSolicita = tasaSolicitaSelect.value;
-        } else {
-            containerCapitalizacion.classList.remove("hiden");
-            tasaSolicita = tasaSolicitaSelect.value;
-        }
-    });
-});
-*/
-
-/* ----------------------------------------------------
     Funciones para convertir las tasas
    ----------------------------------------------------  */
 
